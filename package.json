@@ -1,6 +1,6 @@
 {
 	"name": "return-all",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"sideEffects": false,
 	"description": "Merge the return values of multiple functions into a single typed object",
 	"keywords": [
@@ -40,8 +40,11 @@
 		"test:watch": "vitest",
 		"test:cov": "vitest run --coverage",
 		"typecheck": "tsc --noEmit",
-		"pub": "npm publish",
-		"prepub": "pnpm run typecheck && pnpm run build"
+		"pub": "pnpm publish --no-git-checks",
+		"prepub": "pnpm run typecheck && pnpm run build",
+		"release:patch": "pnpm version patch --no-git-tag-version && pnpm run pub",
+		"release:minor": "pnpm version minor --no-git-tag-version && pnpm run pub",
+		"release:major": "pnpm version major --no-git-tag-version && pnpm run pub"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
