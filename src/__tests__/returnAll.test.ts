@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, expectTypeOf, it } from "vitest";
 import { returnAll } from "../returnAll";
 
 describe("returnAll", () => {
@@ -41,5 +41,23 @@ describe("returnAll", () => {
     );
 
     expect(calls).toBe(2);
+  });
+});
+
+describe("returnAll types", () => {
+  it("should type each property from its corresponding function's return type", () => {
+    const result = returnAll(
+      () => ({ a: 1 }),
+      () => ({ b: "hello" }),
+    );
+
+    expectTypeOf(result.a).toEqualTypeOf<number>();
+    expectTypeOf(result.b).toEqualTypeOf<string>();
+  });
+
+  it("should fall back to Record<string, unknown> for no arguments", () => {
+    const result = returnAll();
+
+    expectTypeOf(result).toEqualTypeOf<Record<string, unknown>>();
   });
 });

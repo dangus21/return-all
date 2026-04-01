@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, expectTypeOf, it } from "vitest";
 import { returnAllAsync } from "../returnAllAsync";
 
 describe("returnAllAsync", () => {
@@ -51,5 +51,31 @@ describe("returnAllAsync", () => {
     );
 
     expect(order).toEqual([2, 1]);
+  });
+});
+
+describe("returnAllAsync types", () => {
+  it("should type each property from its corresponding async function's return type", async () => {
+    const result = await returnAllAsync(
+      async () => ({ a: 1 }),
+      async () => ({ b: "hello" }),
+    );
+
+    expectTypeOf(result.a).toEqualTypeOf<number>();
+    expectTypeOf(result.b).toEqualTypeOf<string>();
+  });
+
+  it("should unwrap Promise return types", async () => {
+    const result = await returnAllAsync(
+      (): Promise<{ a: number }> => Promise.resolve({ a: 1 }),
+    );
+
+    expectTypeOf(result.a).toEqualTypeOf<number>();
+  });
+
+  it("should fall back to Record<string, unknown> for no arguments", async () => {
+    const result = await returnAllAsync();
+
+    expectTypeOf(result).toEqualTypeOf<Record<string, unknown>>();
   });
 });
