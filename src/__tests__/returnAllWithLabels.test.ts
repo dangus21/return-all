@@ -76,5 +76,10 @@ describe("returnAllWithLabels", () => {
 
       expectTypeOf(result).toEqualTypeOf<{}>();
     });
+
+    it("should reject async functions at the type level", () => {
+      // @ts-expect-error async functions are not allowed in returnAllWithLabels
+      returnAllWithLabels({ a: async () => ({ x: 1 }) });
+    });
   });
 });
