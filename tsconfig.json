@@ -3,34 +3,31 @@
 	"compilerOptions": {
 		"allowJs": false,
 		"allowSyntheticDefaultImports": true,
-		"declaration": false,
+		"declaration": true,
+		"declarationMap": true,
 		"esModuleInterop": true,
-		"importHelpers": true,
-		"jsx": "react-jsx",
-		"jsxImportSource": "react",
 		"lib": [
-			"ES2022",
-			"DOM",
-			"DOM.Iterable"
+			"ES2022"
 		],
 		"module": "ESNext",
 		"moduleResolution": "bundler",
 		"noUncheckedIndexedAccess": true,
 		"noErrorTruncation": true,
 		"resolveJsonModule": true,
-		"rootDir": "./",
+		"rootDir": "./src",
+		"outDir": "./dist",
 		"skipDefaultLibCheck": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"noEmit": true,
 		"strict": true,
-		"target": "ES2022",
+		"target": "ES2022"
 	},
 	"include": [
-		"eslint.config.mjs",
 		"src/**/*"
 	],
 	"exclude": [
-		"**/node_modules"
+		"**/node_modules",
+		"dist"
 	]
 }
