@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1775054231972" clover="3.2.0">
+  <project timestamp="1775054231972" name="All files">
+    <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8" elements="17" coveredelements="17" complexity="0" loc="9" ncloc="9" packages="1" files="4" classes="4"/>
+    <file name="returnAll.ts" path="C:\Users\mmferreira\Documents\coding\return-all\src\returnAll.ts">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="13" count="5" type="stmt"/>
+      <line num="15" count="9" type="stmt"/>
+    </file>
+    <file name="returnAllAsync.ts" path="C:\Users\mmferreira\Documents\coding\return-all\src\returnAllAsync.ts">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="13" count="11" type="stmt"/>
+      <line num="14" count="6" type="stmt"/>
+    </file>
+    <file name="returnAllWithLabels.ts" path="C:\Users\mmferreira\Documents\coding\return-all\src\returnAllWithLabels.ts">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="9" count="4" type="stmt"/>
+      <line num="10" count="6" type="stmt"/>
+    </file>
+    <file name="returnAllWithLabelsAsync.ts" path="C:\Users\mmferreira\Documents\coding\return-all\src\returnAllWithLabelsAsync.ts">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="12" count="5" type="stmt"/>
+      <line num="13" count="8" type="stmt"/>
+      <line num="15" count="5" type="stmt"/>
+    </file>
+  </project>
+</coverage>
