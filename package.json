@@ -1,6 +1,6 @@
 {
 	"name": "return-all",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"sideEffects": false,
 	"description": "Merge the return values of multiple functions into a single typed object",
 	"keywords": [
